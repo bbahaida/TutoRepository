@@ -65,9 +65,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TutoRepository\TutoRepository.csproj">
+    <ProjectReference Include="..\TutoRepository\TutoRepository.DAL.csproj">
       <Project>{455bcafa-f45a-4b4a-aa8c-8c6b22bcc645}</Project>
-      <Name>TutoRepository</Name>
+      <Name>TutoRepository.DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

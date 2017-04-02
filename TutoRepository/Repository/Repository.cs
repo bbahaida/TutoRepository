@@ -14,7 +14,6 @@ namespace TutoRepository.Repository
         public Repository(DbContext Context)
         {
             this.Context = Context;
-           
         }
         public void Add(TEntity entity)
         {
