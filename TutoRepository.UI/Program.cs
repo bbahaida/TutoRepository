@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.Unity;
+﻿
+using StructureMap;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,20 +14,10 @@ namespace TutoRepository.UI
     {
         static void Main(string[] args)
         {
-            // init unity object
-            UnityContainer IU = new UnityContainer();
 
-            // register types will be used in injection
-            IU.RegisterType<RecipeLogic>();
-            IU.RegisterType<RecipeRepository>();
-
-            //
-            IU.RegisterType<IRecipeRepository,RecipeRepository>();
-            IU.RegisterType<IRecipeLogic, RecipeLogic>();
-
-            IRecipeLogic _bl = IU.Resolve<IRecipeLogic>();
-
-
+            IContainer container = Container.For<Resolver>();
+            var _bl = container.GetInstance<IRecipeLogic>();
+            
             List<Recipe> recipes = _bl.GetAll().ToList();
 
             foreach (Recipe recipe in recipes)
